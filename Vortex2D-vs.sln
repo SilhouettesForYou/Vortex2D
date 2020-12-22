@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vortex2D", "Vortex2D\Vortex2D.vcxproj", "{E0D1BC1F-D37E-472B-BA36-C7B90467A83F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Examples", "Examples\Examples.vcxproj", "{A45CFDD0-5772-4ADA-8582-4B46B18DA649}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E0D1BC1F-D37E-472B-BA36-C7B90467A83F} = {E0D1BC1F-D37E-472B-BA36-C7B90467A83F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
