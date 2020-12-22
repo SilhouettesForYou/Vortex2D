@@ -8,7 +8,7 @@
 
 #include <glm/trigonometric.hpp>
 
-#include <Box2D/Box2D.h>
+#include <box2D/box2D.h>
 #include "../Vortex2D/Engine/Boundaries.h"
 #include "../Vortex2D/Engine/Rigidbody.h"
 #include "../Vortex2D/Engine/World.h"
