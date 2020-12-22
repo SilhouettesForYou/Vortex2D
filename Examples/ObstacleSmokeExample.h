@@ -8,7 +8,7 @@
 #include "Rigidbody.h"
 #include "Runner.h"
 
-#include <Box2D/Box2D.h>
+#include <box2D/box2D.h>
 
 #include <glm/trigonometric.hpp>
 

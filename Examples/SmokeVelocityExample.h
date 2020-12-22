@@ -5,7 +5,7 @@
 
 #include "../Vortex2D/Vortex2D.h"
 
-#include <Box2D/Box2D.h>
+#include <box2D/box2D.h>
 
 #include "Rigidbody.h"
 #include "Runner.h"
