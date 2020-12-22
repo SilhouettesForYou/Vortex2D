@@ -1,0 +1,14 @@
+#include "CommonProject.comp"
+
+vec3 get_base(ivec2 pos)
+{
+  vec2 weight = get_weight(pos);
+  float u_term = weight.x - get_weightxp(pos);
+  float v_term = weight.y - get_weightyp(pos);
+
+  vec2 rad = (pos + vec2(0.5) - centre.xy);
+
+  return vec3(u_term * consts.width,
+              v_term * consts.width,
+              v_term * rad.x - u_term * rad.y);
+}

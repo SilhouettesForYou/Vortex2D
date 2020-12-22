@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="BuoyancyWaterExample.h" />
+    <ClInclude Include="ObstacleSmokeExample.h" />
+    <ClInclude Include="RenderExample.h" />
+    <ClInclude Include="Rigidbody.h" />
+    <ClInclude Include="Runner.h" />
+    <ClInclude Include="SmokeExample.h" />
+    <ClInclude Include="SmokeVelocityExample.h" />
+    <ClInclude Include="WaterExample.h" />
+    <ClInclude Include="WaterFallExample.h" />
+    <ClInclude Include="WatermillExample.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rigidbody.cpp" />
+  </ItemGroup>
+</Project>

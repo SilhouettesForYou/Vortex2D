@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{67d70b35-3c3b-4690-94cc-4d2d6ed157fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{75aeb049-a8e9-4e4d-bb23-4b0957773c1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SPIRV">
+      <UniqueIdentifier>{25bec6fd-9d81-4f1c-a4ad-b0aa2e714c8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{7a12927a-0e91-44d2-8b50-7b624d1355b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\LinearSolver">
+      <UniqueIdentifier>{958e7cb0-d7ec-4fd0-b806-2d7f91f92093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\mapbox">
+      <UniqueIdentifier>{3ab402b5-45b4-433b-afc3-e7568fdd3b5b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Advection.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Boundaries.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Cfl.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Density.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Extrapolation.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LevelSet.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Particles.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\PrefixScan.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Pressure.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Rigidbody.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Velocity.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\World.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\ConjugateGradient.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\Diagonal.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\GaussSeidel.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\IncompletePoisson.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\Jacobi.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\LinearSolver.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\Multigrid.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\Reduce.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\LinearSolver\Transfer.cpp">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Buffer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\CommandBuffer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\DescriptorSet.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Device.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Instance.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Pipeline.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\RenderState.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\RenderTarget.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\RenderTexture.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\RenderWindow.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Shapes.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Sprite.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Texture.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Timer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Transformable.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\Work.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SPIRV\Reflection.cpp">
+      <Filter>SPIRV</Filter>
+    </ClCompile>
+    <ClCompile Include="vortex2d_generated_spirv.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Advection.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Boundaries.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Cfl.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Density.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Extrapolation.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LevelSet.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Particles.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\PrefixScan.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Pressure.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Rigidbody.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Velocity.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\World.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\ConjugateGradient.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\Diagonal.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\GaussSeidel.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\IncompletePoisson.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\Jacobi.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\LinearSolver.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\Multigrid.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\Preconditioner.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\Reduce.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\LinearSolver\Transfer.h">
+      <Filter>Engine\LinearSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Buffer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\CommandBuffer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Common.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\DescriptorSet.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Device.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Drawable.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Instance.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Pipeline.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\RenderState.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\RenderTarget.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\RenderTexture.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\RenderWindow.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Shapes.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Sprite.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Texture.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Timer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Transformable.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\Work.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SPIRV\Reflection.h">
+      <Filter>SPIRV</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\vk_mem_alloc.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\mapbox\recursive_wrapper.hpp">
+      <Filter>Utils\mapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\mapbox\variant.hpp">
+      <Filter>Utils\mapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\mapbox\variant_visitor.hpp">
+      <Filter>Utils\mapbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Vortex2D.h" />
+    <ClInclude Include="vortex2d_generated_spirv.h" />
+  </ItemGroup>
+</Project>
