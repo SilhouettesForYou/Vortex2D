@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\glm;D:\glfw-3.3.2.bin.WIN32\include;D:\VulkanSDK\1.2.131.2\Include;D:\Box2D\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\VulkanSDK\1.2.131.2\Lib32;D:\Box2D\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\glm;D:\glfw-3.3.2.bin.WIN32\include;D:\VulkanSDK\1.2.131.2\Include;D:\Box2D\include;../Vortex2D;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\VulkanSDK\1.2.131.2\Lib32;D:\Box2D\lib;D:\glfw-3.3.2.bin.WIN32\lib-vc2019;../Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -94,7 +94,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>vulkan-1.lib;box2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vulkan-1.lib;box2d.lib;glfw3.lib;Vortex2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

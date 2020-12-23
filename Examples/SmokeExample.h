@@ -3,7 +3,7 @@
 //  Vortex2D
 //
 
-#include "../Vortex2D/Vortex2D.h"
+#include "Vortex2D.h"
 
 #include "Runner.h"
 

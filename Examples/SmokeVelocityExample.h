@@ -3,7 +3,7 @@
 //  Vortex2D
 //
 
-#include "../Vortex2D/Vortex2D.h"
+#include "Vortex2D.h"
 
 #include <box2D/box2D.h>
 

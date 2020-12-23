@@ -6,8 +6,8 @@
 #ifndef Examples_Runner_h
 #define Examples_Runner_h
 
-#include "../Vortex2D/Renderer/Device.h"
-#include "../Vortex2D/Renderer/RenderTarget.h"
+#include "Renderer/Device.h"
+#include "Renderer/RenderTarget.h"
 
 class Runner
 {
