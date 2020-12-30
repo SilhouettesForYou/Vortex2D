@@ -1,0 +1,95 @@
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_GOOGLE_include_directive : enable
+
+layout (local_size_x_id = 1, local_size_y_id = 2) in;
+
+layout(push_constant) uniform Consts
+{
+  int width;
+  int height;
+  float delta;
+}consts;
+
+layout(std430, binding = 0) buffer Pressure
+{
+  float value[];
+}pressure;
+
+layout(binding = 1, r32f) uniform image2D FluidLevelSet;
+layout(binding = 2, r32f) uniform image2D SolidLevelSet;
+layout(binding = 3, rgba32f) uniform image2D InVelocity;
+layout(binding = 4, rgba32f) uniform image2D OutVelocity;
+
+layout(std430, binding = 5) buffer Valid
+{
+  ivec2 value[];
+}valid;
+
+#include "CommonProject.comp"
+
+void main()
+{
+  uvec2 localSize = gl_WorkGroupSize.xy; // Hack for Mali-GPU
+
+  int velocityWidth = imageSize(InVelocity).x;
+
+  ivec2 pos = ivec2(gl_GlobalInvocationID);
+  if (pos.x > 0 && pos.y > 0 && pos.x < consts.width - 1 && pos.y < consts.height - 1)
+  {
+    vec2 cell = imageLoad(InVelocity, pos).xy;
+
+    float p = pressure.value[pos.x + pos.y * consts.width];
+    float pxn = pressure.value[(pos.x - 1) + pos.y * consts.width];
+    float pyn = pressure.value[pos.x + (pos.y - 1) * consts.width];
+
+    vec2 pGrad = vec2(p-pxn, p-pyn);
+
+    float phi = imageLoad(FluidLevelSet, pos).x;
+    float phixn = imageLoad(FluidLevelSet, pos + ivec2(-1,0)).x;
+    float phiyn = imageLoad(FluidLevelSet, pos + ivec2(0,-1)).x;
+
+    vec2 theta = vec2(1.0);
+    if (phi >= 0 || phixn >= 0)
+    {
+      theta.x = fraction_inside(phixn, phi);
+    }
+
+    if (phi >= 0 || phiyn >= 0)
+    {
+      theta.y = fraction_inside(phiyn, phi);
+    }
+
+    pGrad /= max(theta, 0.01);
+    vec2 mask = vec2(0.0);
+
+    vec2 wuv = get_weight(pos);
+    if (wuv.x > 0.0 && (phi < 0.0 || phixn < 0.0))
+    {
+      mask.x = 1.0;
+      valid.value[pos.x + pos.y * velocityWidth].x = 1;
+    }
+    else
+    {
+      valid.value[pos.x + pos.y * velocityWidth].x = 0;
+    }
+
+    if (wuv.y > 0.0 && (phi < 0.0 || phiyn < 0.0))
+    {
+      mask.y = 1.0;
+      valid.value[pos.x + pos.y * velocityWidth].y = 1;
+    }
+    else
+    {
+      valid.value[pos.x + pos.y * velocityWidth].y = 0;
+    }
+
+    vec2 new_cell = cell - consts.delta * pGrad * consts.width;
+    imageStore(OutVelocity, pos, vec4(mask * new_cell, 0.0, 0.0));
+  }
+  else
+  {
+    vec4 value = imageLoad(InVelocity, pos);
+    imageStore(OutVelocity, pos, value);
+  }
+}

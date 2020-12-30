@@ -1,0 +1,52 @@
+#version 450
+#extension GL_ARB_separate_shader_objects : enable
+
+layout (local_size_x_id = 1, local_size_y_id = 2) in;
+
+layout(push_constant) uniform Consts
+{
+  int width;
+  int height;
+}consts;
+
+layout(std430, binding = 0) buffer FineDiagonal
+{
+  float value[];
+}fineDiagonal;
+
+layout(std430, binding = 1) buffer Fine
+{
+  float value[];
+}fine;
+
+layout(std430, binding = 2) buffer CoarseDiagonal
+{
+  float value[];
+}coarseDiagonal;
+
+layout(std430, binding = 3) buffer Coarse
+{
+  float value[];
+}coarse;
+
+void main()
+{
+  uvec2 localSize = gl_WorkGroupSize.xy; // Hack for Mali-GPU
+
+  ivec2 pos = ivec2(gl_GlobalInvocationID);
+  if (pos.x < consts.width && pos.y < consts.height)
+  {
+    int index = pos.x + pos.y * consts.width;
+    if (fineDiagonal.value[index] != 0.0)
+    {
+        ivec2 coarsePos = pos / 2;
+        int coarseWidth = consts.width / 2;
+        int coarseIndex = coarsePos.x + coarsePos.y * coarseWidth;
+
+        if (coarseDiagonal.value[coarseIndex] != 0.0)
+        {
+            fine.value[index] += coarse.value[coarseIndex];
+        }
+    }
+  }
+}
